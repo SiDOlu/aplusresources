@@ -84,6 +84,11 @@
             border-color: #c5a059;
             transform: translateY(-2px);
         }
+        
+        /* Custom slide animation timings */
+        .slide-fade {
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
 <body class="selection:bg-brand-goldLight selection:text-brand-navy overflow-x-hidden">
@@ -166,101 +171,126 @@
         </div>
     </header>
 
-    <!-- Editorial Hero Section -->
-    <section id="overview" class="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-brand-slateLight">
-        <!-- Minimal Corporate Grid Background -->
-        <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="lux-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#061325" stroke-width="1.2"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#lux-grid)" />
-            </svg>
-        </div>
-
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+    <!-- High-Prestige Corporate Slider Banner Section -->
+    <section id="overview" class="relative w-full h-[600px] sm:h-[680px] lg:h-[720px] bg-brand-navyDark overflow-hidden border-b border-brand-gold/20">
+        
+        <!-- Individual Carousel Slides -->
+        <div id="slider-wrapper" class="relative w-full h-full">
             
-            <!-- Left Side Editorial Positioning -->
-            <div class="lg:col-span-6 space-y-8 text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-goldLight border border-brand-goldBorder rounded-none text-[10px] font-mono tracking-widest text-brand-navy font-semibold uppercase">
-                    <span class="inline-block w-2 h-2 bg-brand-gold rounded-full"></span>
-                    UK Registered Advisory Core
-                </div>
+            <!-- Slide 1: Global Capital Networks (Room briefing) -->
+            <div class="absolute inset-0 w-full h-full opacity-100 slide-fade scale-100 z-10" id="slide-0">
+                <!-- Background visual overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navyDark/95 via-brand-navyDark/80 to-transparent z-10"></div>
+                <img src="watermarked_img_17878322605677554889.png" alt="A Plus Resources delegation briefing" class="absolute inset-0 w-full h-full object-cover object-center">
                 
-                <h1 class="serif-title text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] font-light text-brand-navyDark tracking-tight">
-                    Connecting emerging economies with <span class="text-brand-gold italic">global capital.</span>
-                </h1>
-                
-                <p class="text-sm sm:text-base text-brand-slateGray font-light leading-relaxed max-w-xl">
-                    A Plus Resources Limited operates as a dedicated, high-level, one-stop advisory house. We specialize in structuring direct pipelines between emerging corridors—including Sub-Saharan Africa, Asia, Latin America, Eastern Europe, and the BRICs—and elite capital networks, foreign institutional project sponsors, and sovereign funds.
-                </p>
-
-                <!-- High-Tier Micro Statistics Panel -->
-                <div class="grid grid-cols-3 gap-6 border-t border-b border-brand-slateLight py-6 max-w-xl">
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-light text-brand-navy font-mono">100%</div>
-                        <div class="text-[9px] font-bold text-brand-slateGray uppercase tracking-wider mt-1.5">Direct Corridor Matchings</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-light text-brand-navy font-mono">Sovereign</div>
-                        <div class="text-[9px] font-bold text-brand-slateGray uppercase tracking-wider mt-1.5">Focus Capabilities</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-light text-brand-navy font-mono">EMEA+</div>
-                        <div class="text-[9px] font-bold text-brand-slateGray uppercase tracking-wider mt-1.5">Bilateral Channels</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#services" class="px-8 py-4 bg-brand-navy hover:bg-brand-navyLight text-white text-xs font-bold font-mono tracking-premium text-center uppercase transition-all duration-300 shadow-md">
-                        Explore Our Advisory
-                    </a>
-                    <a href="#navigator" class="px-8 py-4 bg-white hover:bg-brand-goldLight border border-brand-gold text-brand-navy text-xs font-bold font-mono tracking-premium text-center uppercase transition-all duration-300">
-                        Launch Corridor Navigator
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Side Interactive Framed Image Showcase -->
-            <div class="lg:col-span-6 relative">
-                <!-- Decorative background elements -->
-                <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brand-gold pointer-events-none"></div>
-                <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brand-gold pointer-events-none"></div>
-                
-                <!-- Main Boardroom Asset Container -->
-                <div class="bg-white border border-brand-slateLight p-2.5 shadow-xl relative overflow-hidden group">
-                    <div class="bg-brand-navyDark px-4 py-3 flex items-center justify-between border-b border-brand-gold/20">
-                        <span class="text-[9px] font-mono text-slate-300 tracking-wider">A PLUS RESOURCES Briefing Deck</span>
-                        <span class="text-[8px] font-mono bg-brand-gold text-brand-navyDark px-2 py-0.5 uppercase rounded-sm font-bold">LONDON HQ SESSION</span>
-                    </div>
-
-                    <!-- The image -->
-                    <div class="relative overflow-hidden aspect-[16/10] bg-brand-navy">
-                        <img 
-                            src="assets/london" 
-                            alt="A Plus Resources premium sovereign delegate briefing and investment advisory session in a high-rise London corporate boardroom" 
-                            class="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
-                        >
-                        <!-- Premium visual tag overlay -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-brand-navyDark/90 backdrop-blur-md border border-brand-gold/30 p-4 text-white text-left">
-                            <span class="text-[8px] font-mono text-brand-gold block uppercase tracking-ultra-wide font-bold mb-1">// CO-ORDINATION LEVEL</span>
-                            <p class="text-xs font-light text-slate-200">
-                                Facilitating trust-based partnerships across state delegates, central bankers, and institutional assets.
+                <!-- Slide Content -->
+                <div class="absolute inset-0 z-20 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
+                        <div class="max-w-2xl space-y-6">
+                            <span class="inline-block px-3 py-1 bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-mono text-[9px] uppercase tracking-widest font-bold">
+                                // GLOBAL INVESTMENT CORRIDOR CO-ORDINATION
+                            </span>
+                            <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl text-white font-light leading-[1.1] tracking-tight">
+                                Connecting emerging economies with <span class="text-brand-gold italic">global capital.</span>
+                            </h1>
+                            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-lg">
+                                A Plus Resources Limited operates as a dedicated, high-level, one-stop advisory house. We specialize in structuring direct pipelines between emerging corridors and institutional project sponsors.
                             </p>
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <a href="#services" class="px-6 py-3.5 bg-brand-navy hover:bg-brand-navyLight text-white text-[11px] font-bold font-mono tracking-premium uppercase border-b-2 border-brand-gold transition-all duration-300">
+                                    Explore Our Advisory
+                                </a>
+                                <a href="#navigator" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold font-mono tracking-premium uppercase border border-white/20 transition-all duration-300">
+                                    Launch Corridor Navigator
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Lower informational strip -->
-                    <div class="p-3.5 bg-brand-goldLight border-t border-brand-gold/30 text-[10px] font-mono text-brand-navy flex justify-between items-center">
-                        <span class="font-bold uppercase tracking-wider">Laying Sustainable Foundation Projects</span>
-                        <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+            <!-- Slide 2: Strategic Signing Ceremonies -->
+            <div class="absolute inset-0 w-full h-full opacity-0 slide-fade scale-95 z-0" id="slide-1">
+                <!-- Background visual overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navyDark/95 via-brand-navyDark/85 to-transparent z-10"></div>
+                <img src="watermarked_img_3121596639426748155.png" alt="Official state level infrastructure signing ceremony" class="absolute inset-0 w-full h-full object-cover object-center">
+                
+                <!-- Slide Content -->
+                <div class="absolute inset-0 z-20 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
+                        <div class="max-w-2xl space-y-6">
+                            <span class="inline-block px-3 py-1 bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-mono text-[9px] uppercase tracking-widest font-bold">
+                                // BILATERAL STATE FRAMEWORKS
+                            </span>
+                            <h2 class="serif-title text-4xl sm:text-5xl lg:text-6xl text-white font-light leading-[1.1] tracking-tight">
+                                Structuring resilient <span class="text-brand-gold italic">state alignments.</span>
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-lg">
+                                Trust in emerging corridors is built on strict physical execution. We serve as the trusted pipeline facilitator ensuring secure sovereign protocols and public-private agreements.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <a href="#milestones" class="px-6 py-3.5 bg-brand-navy hover:bg-brand-navyLight text-white text-[11px] font-bold font-mono tracking-premium uppercase border-b-2 border-brand-gold transition-all duration-300">
+                                    View Key Milestones
+                                </a>
+                                <a href="#intake" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold font-mono tracking-premium uppercase border border-white/20 transition-all duration-300">
+                                    Initiate Partnership
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Sovereign Delegate Capacity and Training -->
+            <div class="absolute inset-0 w-full h-full opacity-0 slide-fade scale-95 z-0" id="slide-2">
+                <!-- Background visual overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navyDark/95 via-brand-navyDark/80 to-transparent z-10"></div>
+                <!-- Premium Fallback Cityscape representing Sovereign Markets -->
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=1920&q=80" alt="Global Financial Hub Gateway" class="absolute inset-0 w-full h-full object-cover object-center opacity-40">
+                
+                <!-- Slide Content -->
+                <div class="absolute inset-0 z-20 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
+                        <div class="max-w-2xl space-y-6">
+                            <span class="inline-block px-3 py-1 bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-mono text-[9px] uppercase tracking-widest font-bold">
+                                // EXECUTIVE CAPACITY BUILDING
+                            </span>
+                            <h2 class="serif-title text-4xl sm:text-5xl lg:text-6xl text-white font-light leading-[1.1] tracking-tight">
+                                Elite training for <span class="text-brand-gold italic">emerging leaders.</span>
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-lg">
+                                Equipping trade planners, central bank officials, and ministry delegates with structured governance models, foreign resource frameworks, and Western capital guidelines.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <a href="#programs" class="px-6 py-3.5 bg-brand-navy hover:bg-brand-navyLight text-white text-[11px] font-bold font-mono tracking-premium uppercase border-b-2 border-brand-gold transition-all duration-300">
+                                    Explore Delegate Programs
+                                </a>
+                                <a href="#services" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold font-mono tracking-premium uppercase border border-white/20 transition-all duration-300">
+                                    Advisory Core
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
+
+        <!-- Slider Control Buttons -->
+        <button onclick="prevSlide()" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 h-12 w-12 rounded-none border border-brand-gold/30 hover:border-brand-gold bg-brand-navyDark/50 hover:bg-brand-navyDark text-brand-gold flex items-center justify-center transition-all duration-300 group focus:outline-none" aria-label="Previous Slide">
+            <i class="fa-solid fa-chevron-left group-hover:-translate-x-0.5 transition-transform"></i>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 h-12 w-12 rounded-none border border-brand-gold/30 hover:border-brand-gold bg-brand-navyDark/50 hover:bg-brand-navyDark text-brand-gold flex items-center justify-center transition-all duration-300 group focus:outline-none" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+
+        <!-- Slider Pagination Dots -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-35 flex items-center gap-3">
+            <button onclick="goToSlide(0)" class="h-1.5 w-8 bg-brand-gold transition-all duration-300 focus:outline-none" id="dot-0"></button>
+            <button onclick="goToSlide(1)" class="h-1.5 w-8 bg-white/30 hover:bg-white/50 transition-all duration-300 focus:outline-none" id="dot-1"></button>
+            <button onclick="goToSlide(2)" class="h-1.5 w-8 bg-white/30 hover:bg-white/50 transition-all duration-300 focus:outline-none" id="dot-2"></button>
+        </div>
+
     </section>
 
     <!-- Editorial Alliance Bar -->
@@ -325,7 +355,7 @@
                         </div>
                         <div class="relative overflow-hidden aspect-[16/8] bg-brand-navy border-t border-brand-goldBorder">
                             <img 
-                                src="assets/mena.png" 
+                                src="watermarked_img_3121596639426748155.png" 
                                 alt="Official Signing Ceremony for Urban Infrastructure Project in Hanoi Vietnam" 
                                 class="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
                             >
@@ -367,7 +397,7 @@
                             src="assets/london.png" 
                             alt="London Sovereign Hub" 
                             class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.onerror=null; this.src='assets/london.png';"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=800&q=80';"
                         >
                         <span class="absolute top-3 left-3 bg-brand-navyDark/90 backdrop-blur-sm border border-brand-gold/30 text-[8px] font-mono text-brand-gold px-2 py-0.5 uppercase font-bold">LONDON HUB</span>
                     </div>
@@ -389,7 +419,7 @@
                             src="assets/africa.png" 
                             alt="Sub-Saharan Africa Pipeline" 
                             class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.onerror=null; this.src='assets/africa.png?auto=format&fit=crop&w=800&q=80';"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=800&q=80';"
                         >
                         <span class="absolute top-3 left-3 bg-brand-navyDark/90 backdrop-blur-sm border border-brand-gold/30 text-[8px] font-mono text-brand-gold px-2 py-0.5 uppercase font-bold">AFRICA CORRIDORS</span>
                     </div>
@@ -411,7 +441,7 @@
                             src="assets/asia.png" 
                             alt="Southeast Asia Development Channels" 
                             class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.onerror=null; this.src='assets/asia.png?auto=format&fit=crop&w=800&q=80';"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506970113724-bc41e3896d3f?auto=format&fit=crop&w=800&q=80';"
                         >
                         <span class="absolute top-3 left-3 bg-brand-navyDark/90 backdrop-blur-sm border border-brand-gold/30 text-[8px] font-mono text-brand-gold px-2 py-0.5 uppercase font-bold">SOUTHEAST ASIA</span>
                     </div>
@@ -1167,10 +1197,62 @@
             });
         });
 
+        // Premium Slider Control Logic
+        let currentSlideIndex = 0;
+        const totalSlides = 3;
+        let slideInterval = null;
+
+        function updateSlideDisplay() {
+            for (let i = 0; i < totalSlides; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+                
+                if (i === currentSlideIndex) {
+                    // Make slide visible with slight scale-up animation
+                    slide.className = "absolute inset-0 w-full h-full opacity-100 slide-fade scale-100 z-10";
+                    dot.className = "h-1.5 w-8 bg-brand-gold transition-all duration-300 focus:outline-none";
+                } else {
+                    // Hide other slides
+                    slide.className = "absolute inset-0 w-full h-full opacity-0 slide-fade scale-95 z-0";
+                    dot.className = "h-1.5 w-8 bg-white/30 hover:bg-white/50 transition-all duration-300 focus:outline-none";
+                }
+            }
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            updateSlideDisplay();
+            resetSlideTimer();
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            updateSlideDisplay();
+            resetSlideTimer();
+        }
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            updateSlideDisplay();
+            resetSlideTimer();
+        }
+
+        function startSlideTimer() {
+            slideInterval = setInterval(nextSlide, 7000); // Transitions automatically every 7 seconds
+        }
+
+        function resetSlideTimer() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+            startSlideTimer();
+        }
+
         // Initialize state variables upon system ready
         window.onload = function() {
             togglePortfolioMode('market');
             runNavigatorCalculations();
+            startSlideTimer();
         };
     </script>
 </body>
