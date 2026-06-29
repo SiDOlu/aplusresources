@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Plus Resources Limited | Investment Advisory & Sovereign Capacity Platform</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ibm: {
+                            blue: '#0f62fe', // Authentic IBM Carbon interactive accent
+                            hover: '#0353e9',
+                            light: '#edf5ff',
+                            dark: '#161616',
+                            gray10: '#f4f4f4',
+                            gray20: '#e0e0e0',
+                            gray30: '#c6c6c6',
+                            textPrimary: '#161616',
+                            textSecondary: '#525252',
+                            border: '#e0e0e0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'IBM Plex Sans', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'SFMono-Regular', 'Menlo', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #ffffff;
+            color: #161616;
+        }
+        .font-mono-tech {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        /* IBM Carbon Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0f62fe;
+        }
+        /* Focus state & active state highlight styling */
+        .active-anchor {
+            border-bottom: 2px solid #0f62fe;
+            color: #0f62fe !important;
+        }
+    </style>
+</head>
+<body class="selection:bg-ibm-light selection:text-ibm-blue overflow-x-hidden antialiased bg-white">
+
+    <!-- TOP UTILITY CONTACT & GEOGRAPHY ACCORD -->
+    <div class="bg-ibm-dark text-white text-xs py-2 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-2 relative z-50">
+        <div class="flex items-center gap-4 text-gray-400 font-mono-tech text-[10px] tracking-wider">
+            <span class="text-white font-bold bg-ibm-blue px-1.5 py-0.5 rounded-sm">ADVISORY GLOBAL PORTAL</span>
+            <span>A PLUS RESOURCES LIMITED // GLOBAL CAPITAL & MARKET DEVELOPMENTS</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-gray-300 text-[10px] font-mono-tech">
+            <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-phone text-ibm-blue"></i> +44 (0) 1744 832 615
+            </span>
+            <span class="text-gray-700">|</span>
+            <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-mobile-button text-ibm-blue"></i> +44 (0) 7845 034 609
+            </span>
+            <span class="text-gray-700">|</span>
+            <span class="text-emerald-400">Emerging Markets Core Sector</span>
+        </div>
+    </div>
+
+    <!-- MAIN CORPORATE NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-ibm-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Left Brand Logo Block -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="h-8 w-8 bg-ibm-blue rounded-none flex items-center justify-center font-mono-tech font-bold text-white text-sm shadow-sm">
+                    A+
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-sm font-semibold tracking-wider text-ibm-dark">A PLUS <span class="text-ibm-blue font-bold">RESOURCES</span></span>
+                    <span class="text-[9px] font-mono-tech text-ibm-textSecondary uppercase tracking-widest leading-none mt-0.5">Global Infrastructure Advisory</span>
+                </div>
+            </a>
+
+            <!-- Center Product Links -->
+            <nav class="hidden lg:flex items-center gap-6 h-full">
+                <a href="#overview" class="nav-link text-xs font-mono-tech text-ibm-textSecondary hover:text-ibm-blue py-5 border-b-2 border-transparent transition-all">Overview</a>
+                <a href="#services" class="nav-link text-xs font-mono-tech text-ibm-textSecondary hover:text-ibm-blue py-5 border-b-2 border-transparent transition-all">Advisory Portfolio</a>
+                <a href="#capacity" class="nav-link text-xs font-mono-tech text-ibm-textSecondary hover:text-ibm-blue py-5 border-b-2 border-transparent transition-all">Delegate Events & Training</a>
+                <a href="#corridor-navigator" class="nav-link text-xs font-mono-tech text-ibm-textSecondary hover:text-ibm-blue py-5 border-b-2 border-transparent transition-all flex items-center gap-1">
+                    Corridor Navigator 
+                    <span class="px-1 py-0.2 text-[8px] bg-ibm-blue/10 text-ibm-blue border border-ibm-blue/20 rounded-sm font-bold">Interactive</span>
+                </a>
+                <a href="#about" class="nav-link text-xs font-mono-tech text-ibm-textSecondary hover:text-ibm-blue py-5 border-b-2 border-transparent transition-all">Our Mission</a>
+            </nav>
+
+            <!-- Right Actions Section -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#contact" class="px-4 py-2 border border-ibm-border hover:border-ibm-blue text-ibm-textPrimary hover:text-ibm-blue font-mono-tech text-[11px] font-medium transition-all">
+                    Request Strategic Consultation
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-toggle" class="lg:hidden p-2 text-ibm-textPrimary hover:text-ibm-blue focus:outline-none">
+                <i class="fa-solid fa-bars-staggered text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-nav" class="hidden lg:hidden border-b border-ibm-border bg-white px-4 py-4 space-y-3 font-mono-tech shadow-lg">
+            <a href="#overview" class="block text-xs text-ibm-textSecondary hover:text-ibm-blue transition-colors">01 // Overview</a>
+            <a href="#services" class="block text-xs text-ibm-textSecondary hover:text-ibm-blue transition-colors">02 // Advisory Portfolio</a>
+            <a href="#capacity" class="block text-xs text-ibm-textSecondary hover:text-ibm-blue transition-colors">03 // Delegate Training & Events</a>
+            <a href="#corridor-navigator" class="block text-xs text-ibm-textSecondary hover:text-ibm-blue transition-colors">04 // Corridor Navigator</a>
+            <a href="#about" class="block text-xs text-ibm-textSecondary hover:text-ibm-blue transition-colors">05 // Our Mission</a>
+            <div class="pt-4 border-t border-ibm-border">
+                <a href="#contact" class="w-full block text-center py-2.5 bg-ibm-blue text-white text-xs font-medium">Request Strategic Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECONDARY STICKY SUB-BAR (IBM STYLE) -->
+    <div class="bg-ibm-gray10 border-b border-ibm-border sticky top-16 z-30 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-10">
+            <div class="flex gap-6 text-[11px] font-mono-tech text-ibm-textSecondary h-full">
+                <a href="#overview" class="sub-anchor flex items-center h-full hover:text-ibm-blue transition-all active-anchor px-1">Overview</a>
+                <a href="#services" class="sub-anchor flex items-center h-full hover:text-ibm-blue transition-all px-1">Investment Advisory</a>
+                <a href="#capacity" class="sub-anchor flex items-center h-full hover:text-ibm-blue transition-all px-1">Delegate Capacity Programs</a>
+                <a href="#corridor-navigator" class="sub-anchor flex items-center h-full hover:text-ibm-blue transition-all px-1">Interactive Navigator</a>
+                <a href="#about" class="sub-anchor flex items-center h-full hover:text-ibm-blue transition-all px-1">Mission & Partnerships</a>
+            </div>
+            <div class="text-[10px] font-mono-tech text-ibm-textSecondary">
+                <span>Core Geographies: <span class="text-ibm-blue font-semibold">Africa, Asia, South America, Eastern Europe, BRICs</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXECUTIVE HERO CONTAINER -->
+    <section id="overview" class="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-ibm-border">
+        <!-- Structured Tech Grid Overlay (IBM Minimalist) -->
+        <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="ibm-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+                        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#161616" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#ibm-grid)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+            
+            <!-- Left Column: Core Positioning -->
+            <div class="lg:col-span-6 space-y-6 text-left flex flex-col justify-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-ibm-gray10 border border-ibm-border rounded-none text-xs font-mono-tech text-ibm-blue w-fit font-semibold">
+                    <span class="inline-block w-2 h-2 bg-ibm-blue"></span>
+                    A PLUS RESOURCES LIMITED // STRATEGIC ADVISORY
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-light tracking-tight text-ibm-textPrimary leading-none">
+                    Investment Advisory.<br>
+                    <span class="font-normal text-ibm-blue">Market Access, Sourced.</span>
+                </h1>
+                
+                <p class="text-sm sm:text-base text-ibm-textSecondary font-light leading-relaxed max-w-xl">
+                    We act as a premium, dedicated one-stop-shop connecting emerging markets—including Africa, Asia, South America, Eastern Europe, and the BRICs—with international capital, project developers, and strategic bilateral partnerships.
+                </p>
+
+                <!-- Core Global Matrix Grid -->
+                <div class="grid grid-cols-3 gap-4 border-t border-b border-ibm-border py-5 max-w-xl">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-light text-ibm-textPrimary font-mono-tech">100%</div>
+                        <div class="text-[9px] text-ibm-textSecondary uppercase tracking-wider mt-1 font-mono-tech">Consultative Focus</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-light text-ibm-textPrimary font-mono-tech">EMEA+</div>
+                        <div class="text-[9px] text-ibm-textSecondary uppercase tracking-wider mt-1 font-mono-tech">Emerging Corridors</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-light text-ibm-textPrimary font-mono-tech">Direct</div>
+                        <div class="text-[9px] text-ibm-textSecondary uppercase tracking-wider mt-1 font-mono-tech">Partner Matching</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <a href="#services" class="px-5 py-3 rounded-none bg-ibm-blue hover:bg-ibm-hover text-white text-xs font-semibold font-mono-tech text-center transition-all">
+                        Explore Advisory Portfolio
+                    </a>
+                    <a href="#corridor-navigator" class="px-5 py-3 rounded-none bg-white hover:bg-ibm-gray10 border border-ibm-border text-ibm-textPrimary text-xs font-mono-tech text-center transition-all">
+                        Launch Interactive Navigator
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Pure Informational Structural Diagram -->
+            <div class="lg:col-span-6 flex items-center">
+                <div class="w-full bg-white border border-ibm-border rounded-none overflow-hidden shadow-sm">
+                    
+                    <!-- Clean Header Block -->
+                    <div class="bg-ibm-gray10 px-4 py-3 flex items-center justify-between border-b border-ibm-border">
+                        <span class="text-[10px] font-mono-tech text-ibm-textSecondary font-bold">A PLUS ADVISORY WORKFLOW</span>
+                        <span class="text-[9px] font-mono-tech bg-ibm-blue/10 text-ibm-blue px-2 py-0.5 border border-ibm-blue/30 uppercase rounded-sm font-semibold">One-Stop-Shop Model</span>
+                    </div>
+
+                    <!-- Pure Process Map UI representation (No code sandbox/agents!) -->
+                    <div class="p-6 space-y-6 bg-white min-h-[340px] flex flex-col justify-between">
+                        
+                        <!-- Flow Diagram Steps -->
+                        <div class="space-y-4">
+                            <div class="flex gap-4 items-start pb-4 border-b border-ibm-border">
+                                <div class="h-6 w-6 rounded-none bg-ibm-blue/10 text-ibm-blue flex items-center justify-center font-mono-tech text-xs font-bold shrink-0">01</div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-ibm-textPrimary uppercase tracking-wider">Opportunity Identification</h4>
+                                    <p class="text-[11px] text-ibm-textSecondary leading-relaxed">Mapping strategic assets, resources, and requirements within Africa, Asia, and other high-potential emerging markets.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start pb-4 border-b border-ibm-border">
+                                <div class="h-6 w-6 rounded-none bg-ibm-blue/10 text-ibm-blue flex items-center justify-center font-mono-tech text-xs font-bold shrink-0">02</div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-ibm-textPrimary uppercase tracking-wider">Market Access & Development</h4>
+                                    <p class="text-[11px] text-ibm-textSecondary leading-relaxed">Overcoming regulatory barriers, local integration bottlenecks, and designing solid business entry strategies.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <div class="h-6 w-6 rounded-none bg-ibm-blue/10 text-ibm-blue flex items-center justify-center font-mono-tech text-xs font-bold shrink-0">03</div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-ibm-textPrimary uppercase tracking-wider">Finance & Investor Sourcing</h4>
+                                    <p class="text-[11px] text-ibm-textSecondary leading-relaxed">Actively matching strategic localized plans with verified, reliable global institutional capital and private funding avenues.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brief Callout -->
+                        <div class="p-3 bg-ibm-gray10 border-l-2 border-ibm-blue text-[11px] font-mono-tech text-ibm-textSecondary">
+                            <span class="text-ibm-textPrimary font-semibold block mb-0.5">Direct Access Portal</span>
+                            Establishing robust private sector networks, bilateral governmental channels, and sovereign delegation conduits.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (THE ONE-STOP-SHOP PORTFOLIO) -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-ibm-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">// SERVICE PORTFOLIO MATRIX</span>
+                <h2 class="text-3xl sm:text-4xl font-light text-ibm-textPrimary tracking-tight">
+                    Professional Advisory Portfolios
+                </h2>
+                <p class="text-ibm-textSecondary text-xs sm:text-sm max-w-xl mx-auto">
+                    A Plus Resources operates as an direct conduit, guiding projects from raw formulation to fully financed and highly integrated commercial assets.
+                </p>
+            </div>
+
+            <!-- Tab Selectors (Matching flat IBM Carbon structures) -->
+            <div class="grid grid-cols-3 max-w-4xl mx-auto border border-ibm-border bg-white rounded-none mb-8 shadow-sm">
+                <button onclick="changeOperationalMode('market')" id="mode-tab-market" class="py-4 text-xs font-mono-tech font-bold border-r border-ibm-border transition-all bg-ibm-light text-ibm-blue">
+                    01. MARKET ACCESS <span class="hidden sm:inline-block text-[9px] text-ibm-blue pl-1">// ACCESS</span>
+                </button>
+                <button onclick="changeOperationalMode('identify')" id="mode-tab-identify" class="py-4 text-xs font-mono-tech font-semibold border-r border-ibm-border transition-all text-ibm-textSecondary hover:text-ibm-blue">
+                    02. OPPORTUNITIES <span class="hidden sm:inline-block text-[9px] text-ibm-blue pl-1">// SCOPE</span>
+                </button>
+                <button onclick="changeOperationalMode('finance')" id="mode-tab-finance" class="py-4 text-xs font-mono-tech font-semibold transition-all text-ibm-textSecondary hover:text-ibm-blue">
+                    03. FINANCE SOURCING <span class="hidden sm:inline-block text-[9px] text-ibm-blue pl-1">// CAPITAL</span>
+                </button>
+            </div>
+
+            <!-- Dynamic Specs Card (Changes on tab switch) -->
+            <div class="bg-white border border-ibm-border rounded-none p-6 sm:p-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-sm" id="mode-details-box">
+                <!-- Initial Core Fallback: Market Entry -->
+                <div class="md:col-span-7 space-y-4">
+                    <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">Service Category // 01. Market Development & Access</span>
+                    <h3 class="text-xl sm:text-2xl font-light text-ibm-textPrimary">Guiding sovereign entry setups and navigating localized corporate barriers.</h3>
+                    <p class="text-xs text-ibm-textSecondary leading-relaxed">
+                        We actively help international businesses land in emerging economic corridors with optimized regulatory configurations, localized joint venture structures, and robust relationship management.
+                    </p>
+                    <ul class="space-y-2 text-xs text-ibm-textSecondary font-mono-tech">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-ibm-blue text-[9px]"></i> Strategic government and agency relationship building</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-ibm-blue text-[9px]"></i> Cross-border regulatory compliance checks and local setup permits</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-ibm-blue text-[9px]"></i> Regional commercial feasibility and corridor landing assessments</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 p-6 border border-ibm-border rounded-none shadow-inner">
+                    <div class="flex justify-between items-center text-[9px] font-mono-tech text-ibm-textSecondary border-b border-ibm-border pb-3 mb-4 font-bold">
+                        <span>DELIVERY SCOPE</span>
+                        <span>ONGOING ENGAGEMENT</span>
+                    </div>
+                    <div class="space-y-4 font-mono-tech text-xs">
+                        <div class="p-3 bg-white border-l-2 border-ibm-blue rounded-none shadow-sm">
+                            <h4 class="font-bold text-ibm-textPrimary text-[11px] mb-1">Local Agency Linkages</h4>
+                            <p class="text-ibm-textSecondary text-[10px]">Unlocking high-level access through established bilateral trade agencies.</p>
+                        </div>
+                        <div class="p-3 bg-white border-l-2 border-slate-400 rounded-none shadow-sm">
+                            <h4 class="font-bold text-ibm-textPrimary text-[11px] mb-1">Regulatory Cleared Paths</h4>
+                            <p class="text-ibm-textSecondary text-[10px]">Evaluating strict compliance checks under complex bilateral treaties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CAPACITY BUILDING & DELEGATE EVENTS -->
+    <section id="capacity" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-ibm-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+                <div>
+                    <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">// NEW STRATEGIC CAPABILITIES</span>
+                    <h2 class="text-3xl sm:text-4xl font-light text-ibm-textPrimary tracking-tight mt-2">Delegate Events & Training Programs</h2>
+                </div>
+                <p class="text-xs text-ibm-textSecondary max-w-sm font-light leading-relaxed">
+                    Designed strictly for government delegates, investment promotion executives, and enterprise leaders seeking to bridge localized capacity with global capital models.
+                </p>
+            </div>
+
+            <!-- Focus Tracks Grids -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Track 1 -->
+                <div class="bg-slate-50 border border-ibm-border rounded-none p-6 hover:border-ibm-blue transition-all flex flex-col justify-between group shadow-sm">
+                    <div>
+                        <div class="h-10 w-10 bg-ibm-blue/10 text-ibm-blue rounded-none flex items-center justify-center text-sm mb-5 transition-transform shadow-sm">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-ibm-textPrimary mb-2">FDI Concessions & Project Packaging</h3>
+                        <p class="text-xs text-ibm-textSecondary leading-relaxed">
+                            Structured training workshops to assist delegates in preparing investable briefs, PPP concession blueprints, and pitching complex regional initiatives to global DFIs.
+                        </p>
+                    </div>
+                    <span class="text-[9px] font-mono-tech text-ibm-textSecondary mt-6 block uppercase tracking-wider font-bold">Audience // IPAs & Ministry Executives</span>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="bg-slate-50 border border-ibm-border rounded-none p-6 hover:border-ibm-blue transition-all flex flex-col justify-between group shadow-sm">
+                    <div>
+                        <div class="h-10 w-10 bg-ibm-blue/10 text-ibm-blue rounded-none flex items-center justify-center text-sm mb-5 transition-transform shadow-sm">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-ibm-textPrimary mb-2">Economic Resilience & Governance</h3>
+                        <p class="text-xs text-ibm-textSecondary leading-relaxed">
+                            Equipping policy planners and central bank staff with frameworks to assess systemic risk, currency volatility mitigation, and sovereign infrastructure funding models.
+                        </p>
+                    </div>
+                    <span class="text-[9px] font-mono-tech text-ibm-textSecondary mt-6 block uppercase tracking-wider font-bold">Audience // Monetary & Fiscal Policy Leads</span>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="bg-slate-50 border border-ibm-border rounded-none p-6 hover:border-ibm-blue transition-all flex flex-col justify-between group shadow-sm">
+                    <div>
+                        <div class="h-10 w-10 bg-ibm-blue/10 text-ibm-blue rounded-none flex items-center justify-center text-sm mb-5 transition-transform shadow-sm">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-ibm-textPrimary mb-2">Global Trade Missions & Matchings</h3>
+                        <p class="text-xs text-ibm-textSecondary leading-relaxed">
+                            Organized delegation study visits to active Western trade corridors, commercial exchanges, and modern logistics terminals to benchmark operations.
+                        </p>
+                    </div>
+                    <span class="text-[9px] font-mono-tech text-ibm-textSecondary mt-6 block uppercase tracking-wider font-bold">Audience // Trade Ministries & Chamber Heads</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SOVEREIGN CORRIDOR NAVIGATOR -->
+    <section id="corridor-navigator" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-ibm-border relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">// INTERACTIVE DECISION MATRIX</span>
+                <h2 class="text-3xl sm:text-4xl font-light text-ibm-textPrimary tracking-tight">Corridor Engagement Navigator</h2>
+                <p class="text-ibm-textSecondary text-xs sm:text-sm">
+                    Identify strategic advisory checkpoints, partner networks, and delegate programs based on your emerging market corridor objectives.
+                </p>
+            </div>
+
+            <!-- Navigator Tool Interface Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white border border-ibm-border rounded-none p-6 sm:p-10 relative shadow-sm">
+                
+                <!-- Controls Side (Left Column) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="flex items-center gap-2 pb-3 border-b border-ibm-border">
+                        <span class="text-xs font-mono-tech uppercase text-ibm-textPrimary font-bold">Engagement Parameters</span>
+                    </div>
+
+                    <!-- Input 1: Geographic Target Region -->
+                    <div class="space-y-2">
+                        <label class="block text-[10px] font-mono-tech text-ibm-textSecondary uppercase tracking-wider font-bold">01 // SELECT CORE REGION</label>
+                        <select id="nav-region" onchange="runNavigator()" class="w-full bg-slate-50 border border-ibm-border rounded-none p-3 text-xs text-ibm-textPrimary focus:outline-none focus:border-ibm-blue transition-colors">
+                            <option value="africa" selected>Sub-Saharan Africa & BRICs Core</option>
+                            <option value="asia">Southeast Asia Development Hubs</option>
+                            <option value="latam">South America Core Corridors</option>
+                            <option value="europe">Eastern Europe Emerging Pathways</option>
+                        </select>
+                    </div>
+
+                    <!-- Input 2: Core Business Objective -->
+                    <div class="space-y-2">
+                        <label class="block text-[10px] font-mono-tech text-ibm-textSecondary uppercase tracking-wider font-bold">02 // PRIMARY OBJECTIVE</label>
+                        <select id="nav-objective" onchange="runNavigator()" class="w-full bg-slate-50 border border-ibm-border rounded-none p-3 text-xs text-ibm-textPrimary focus:outline-none focus:border-ibm-blue transition-colors">
+                            <option value="finance" selected>Sourcing Strategic Project Finance</option>
+                            <option value="access">Establishing New Market Entry Access</option>
+                            <option value="training">Training Delegates on FDI Packaging</option>
+                            <option value="relationship">Building High-Level State Relationships</option>
+                        </select>
+                    </div>
+
+                    <!-- Input 3: Proposed Partnership Scale -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] font-mono-tech text-ibm-textSecondary uppercase tracking-wider font-bold">
+                            <label>03 // ESTIMATED DELEGATION SIZE</label>
+                            <span id="nav-delegation-display" class="text-ibm-blue font-bold">12 delegates</span>
+                        </div>
+                        <input id="nav-delegation-slider" type="range" min="2" max="25" value="12" oninput="updateNavDelegates(this.value)" class="w-full accent-ibm-blue bg-slate-200 h-1 cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Live Manifest Response Deck (Right Column) -->
+                <div class="lg:col-span-7 bg-slate-50 border border-ibm-border rounded-none p-5 relative flex flex-col justify-between min-h-[400px]">
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-ibm-border">
+                            <h3 class="text-[11px] font-mono-tech uppercase text-ibm-blue font-bold flex items-center gap-1.5">
+                                <span class="w-2 h-2 bg-emerald-500 inline-block"></span>
+                                Tailored Consultation Blueprint
+                            </h3>
+                            <span class="text-[9px] font-mono-tech bg-white text-ibm-textPrimary px-2 py-0.5 border border-ibm-border rounded-none shadow-sm" id="nav-badge">Sub-Saharan Africa Track</span>
+                        </div>
+
+                        <!-- Dynamically Generated Details -->
+                        <div class="space-y-3" id="nav-blueprint-container">
+                            <!-- Injected by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Sync Actions Container -->
+                    <div class="pt-5 border-t border-ibm-border mt-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-left">
+                            <span class="text-[9px] font-mono-tech uppercase text-ibm-textSecondary block font-bold">Configured Consultation Pathway</span>
+                            <span id="nav-summary-label" class="text-xs text-ibm-textPrimary font-semibold font-mono-tech">Advisory framework for Africa (Sourcing Finance)</span>
+                        </div>
+                        <button onclick="syncNavigatorToForm()" class="w-full sm:w-auto px-5 py-3 bg-ibm-blue hover:bg-ibm-hover text-white text-xs font-mono-tech rounded-none transition-all text-center tracking-wide uppercase font-bold">
+                            Export to Intake Desk <i class="fa-solid fa-angle-right ml-1"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MISSION & STRATEGIC RELATIONSHIPS (ABOUT US) -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-ibm-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Narrative Block -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">// SECURING STRATEGIC SYNERGIES</span>
+                    <h2 class="text-3xl sm:text-4xl font-light text-ibm-textPrimary tracking-tight">
+                        Our Mission: Bridging Local Capacities with Global Partnerships.
+                    </h2>
+                    <p class="text-xs sm:text-sm text-ibm-textSecondary leading-relaxed">
+                        At A Plus Resources Limited, our central mission is the cultivation of strong, reliable, and legally sound strategic relationships between sovereign entities, local developers, and private global partners.
+                    </p>
+                    <p class="text-xs text-ibm-textSecondary leading-relaxed">
+                        Emerging economies feature spectacular growth opportunities but often suffer from structural access gaps. We close these gaps by acting as a highly trusted regulatory, financial, and strategic intermediary.
+                    </p>
+
+                    <!-- Key Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-slate-50 border border-ibm-border rounded-none">
+                            <h4 class="text-xs font-bold text-ibm-textPrimary font-mono-tech uppercase mb-1">Empowering Local Agency</h4>
+                            <p class="text-[11px] text-ibm-textSecondary">We help local enterprises and state ministries develop rigorous capacity to command international attention.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-ibm-border rounded-none">
+                            <h4 class="text-xs font-bold text-ibm-textPrimary font-mono-tech uppercase mb-1">Global Safeguards Alignment</h4>
+                            <p class="text-[11px] text-ibm-textSecondary">We ensure that strategic projects are designed to satisfy international compliance, DFI, and risk requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Geographic Reach Grid Visualization -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="border border-ibm-border p-6 bg-slate-50 rounded-none shadow-sm space-y-4">
+                        <h3 class="text-xs font-bold font-mono-tech text-ibm-textPrimary uppercase tracking-wider pb-2 border-b border-ibm-border">Target Corridor Focus</h3>
+                        
+                        <div class="space-y-3 font-mono-tech text-[11px]">
+                            <div class="flex justify-between items-center">
+                                <span class="text-ibm-textPrimary font-semibold">Africa Corridor</span>
+                                <span class="text-ibm-blue text-[10px] font-bold">Sub-Saharan focus</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-ibm-textPrimary font-semibold">Asia Development Channels</span>
+                                <span class="text-ibm-blue text-[10px] font-bold">Southeast structures</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-ibm-textPrimary font-semibold">South America Systems</span>
+                                <span class="text-ibm-blue text-[10px] font-bold">Mercosur alignment</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-ibm-textPrimary font-semibold">Eastern Europe Channels</span>
+                                <span class="text-ibm-blue text-[10px] font-bold">Emerging compliance</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-ibm-textPrimary font-semibold">BRICs Partnerships</span>
+                                <span class="text-ibm-blue text-[10px] font-bold">Bilateral scaling</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-ibm-border text-[10px] text-ibm-textSecondary italic">
+                            *Fully optimized to coordinate direct communication channels under global diplomatic protocols.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURE ADVISORY STRATEGIC INTAKE DESK -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-ibm-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Hand Text Contacts & Compliance details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">// COMPLIANT REGISTRY DESK</span>
+                    <h2 class="text-3xl font-light text-ibm-textPrimary tracking-tight">Register Strategic Initiatives</h2>
+                    <p class="text-xs sm:text-sm text-ibm-textSecondary leading-relaxed">
+                        Submit investment briefs, infrastructure profiles, or state delegation requests directly to our registered UK headquarters.
+                    </p>
+
+                    <!-- Formal Compliance Contacts Panel -->
+                    <div class="space-y-6 pt-6 border-t border-ibm-border text-xs font-mono-tech">
+                        <div>
+                            <span class="text-ibm-blue block mb-1 font-bold">UNITED KINGDOM HEADQUARTERS</span>
+                            <p class="text-ibm-textPrimary font-semibold">A Plus Resources Limited</p>
+                            <p class="text-ibm-textSecondary">Consultation and Business Advisory Services</p>
+                        </div>
+                        <div>
+                            <span class="text-ibm-blue block mb-1 font-bold">DIRECT DIRECTORIES</span>
+                            <p class="text-ibm-textPrimary font-bold">Mobile Line: +44 (0) 7845 034 609</p>
+                            <p class="text-ibm-textPrimary font-bold">Office Line: +44 (0) 1744 832 615</p>
+                            <p class="text-ibm-textSecondary">Operational Window: 08:30 - 18:30 GMT</p>
+                        </div>
+                        <div class="p-4 bg-white border border-ibm-border rounded-none text-[10px] leading-relaxed shadow-sm">
+                            <span class="text-ibm-textPrimary font-bold block mb-1"><i class="fa-solid fa-lock text-ibm-blue mr-1"></i> Discretion Standard</span>
+                            Information compiled and sent through this platform is processed strictly through proprietary consulting avenues and is protected under professional NDA boundaries.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hand Secure Consultation Form -->
+                <div class="lg:col-span-7 bg-white border border-ibm-border rounded-none p-6 sm:p-10 relative shadow-sm">
+                    
+                    <!-- Submission Success Box -->
+                    <div id="form-success-alert" class="hidden absolute inset-0 bg-white rounded-none flex flex-col items-center justify-center p-8 text-center z-10">
+                        <div class="h-12 w-12 bg-ibm-blue/10 text-ibm-blue rounded-none flex items-center justify-center text-xl mb-4 font-mono-tech">
+                            <i class="fa-solid fa-envelope-circle-check animate-pulse"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ibm-textPrimary mb-2 font-mono-tech">TRANSMISSION REGISTERED</h3>
+                        <p class="text-xs text-ibm-textSecondary max-w-sm leading-relaxed mb-6 font-mono-tech">
+                            Your emerging market project credentials and delegation goals have been safely logged. An executive associate will reach out to schedule an initial consultation.
+                        </p>
+                        <button onclick="resetDiplomaticForm()" class="px-4 py-2 bg-slate-50 border border-ibm-border rounded-none text-ibm-textSecondary text-xs font-mono-tech hover:border-ibm-blue hover:text-ibm-blue transition-colors">
+                            Submit Alternative Request
+                        </button>
+                    </div>
+
+                    <!-- Core Form Element -->
+                    <form id="diplomatic-form" onsubmit="dispatchDiplomaticData(event)" class="space-y-5">
+                        <div class="flex items-center gap-2 pb-2 border-b border-ibm-border">
+                            <span class="text-[10px] font-mono-tech uppercase text-ibm-textPrimary font-bold">REGISTRATION INTERFACE</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <!-- Field 1: Name -->
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Representative Full Name</label>
+                                <input type="text" id="form-name" required placeholder="e.g., Director of Operations" class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors">
+                            </div>
+                            <!-- Field 2: Email -->
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Corporate / Institutional Email</label>
+                                <input type="email" id="form-email" required placeholder="e.g., development@enterprise.com" class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <!-- Field 3: Phone -->
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Secure Contact Number</label>
+                                <input type="tel" id="form-phone" required placeholder="Including country codes" class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors">
+                            </div>
+                            <!-- Field 4: Entity -->
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Company / Agency Name</label>
+                                <input type="text" id="form-institution" required placeholder="e.g., State Investment Bureau" class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Subject Area -->
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Primary Area of Interest</label>
+                            <select id="form-track-select" class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors">
+                                <option value="market">Market Access & Expansion Advisory</option>
+                                <option value="opportunities">Identifying Emerging Market Capital Opportunities</option>
+                                <option value="finance">Sourcing Finance & Global Investment</option>
+                                <option value="training">Sovereign Delegate Training & Study Tours</option>
+                            </select>
+                        </div>
+
+                        <!-- Field 6: Message -->
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-mono-tech uppercase text-ibm-textSecondary font-bold">Core Initiative Profile Details</label>
+                            <textarea id="form-details-body" rows="4" placeholder="Briefly introduce your project, required resources, target emerging region, or specific delegate capacity training goals." class="w-full bg-slate-50 border border-ibm-border rounded-none focus:border-ibm-blue p-3 text-xs text-ibm-textPrimary focus:outline-none transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full text-center py-3.5 bg-ibm-blue hover:bg-ibm-hover text-white text-xs font-mono-tech rounded-none font-bold uppercase transition-all shadow-sm">
+                            Transmit Registration Brief
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANT PROFESSIONAL FOOTER -->
+    <footer class="bg-white border-t border-ibm-border py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pb-10 border-b border-ibm-border">
+            
+            <div class="text-center md:text-left space-y-2">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <span class="font-mono-tech font-bold text-ibm-textPrimary text-sm tracking-wider">A PLUS RESOURCES LIMITED</span>
+                    <span class="text-[9px] font-mono-tech text-ibm-blue uppercase px-1.5 py-0.2 border border-ibm-blue/30 bg-ibm-blue/10 rounded-sm font-bold">REGISTERED IN UK</span>
+                </div>
+                <p class="text-[10px] text-ibm-textSecondary max-w-sm leading-relaxed font-mono-tech">
+                    Direct corporate matching, global finance sourcing, and institutional development channels. Dedicated advisory support across Africa, Asia, and global emerging corridors.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end gap-2 text-[11px] text-ibm-textSecondary font-mono-tech">
+                <div class="flex flex-wrap justify-center gap-5">
+                    <a href="#overview" class="hover:text-ibm-blue transition-colors">Overview</a>
+                    <a href="#services" class="hover:text-ibm-blue transition-colors">Portfolio</a>
+                    <a href="#capacity" class="hover:text-ibm-blue transition-colors">Training</a>
+                    <a href="#about" class="hover:text-ibm-blue transition-colors">About Us</a>
+                    <a href="#contact" class="hover:text-ibm-blue transition-colors">Contact</a>
+                </div>
+                <p class="text-[9px] text-ibm-textSecondary mt-2">&copy; 2026 A Plus Resources Limited. All rights reserved under local compliance statutes.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTION CONTROLLERS & DATA REPOSITORY -->
+    <script>
+        // Mobile Navigation Drawer Switch
+        const mobileToggleBtn = document.getElementById('mobile-toggle');
+        const mobileDrawerNav = document.getElementById('mobile-nav');
+
+        mobileToggleBtn.addEventListener('click', () => {
+            mobileDrawerNav.classList.toggle('hidden');
+        });
+
+        const mobileMenuItems = mobileDrawerNav.querySelectorAll('a');
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileDrawerNav.classList.add('hidden');
+            });
+        });
+
+        // Highlights secondary sticky elements based on visual scrolling checkpoints
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const subAnchors = document.querySelectorAll('.sub-anchor');
+            
+            let currentSec = '';
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop;
+                if (window.pageYOffset >= secTop - 180) {
+                    currentSec = sec.getAttribute('id');
+                }
+            });
+
+            subAnchors.forEach(anch => {
+                anch.classList.remove('active-anchor');
+                if (anch.getAttribute('href') === `#${currentSec}`) {
+                    anch.classList.add('active-anchor');
+                }
+            });
+        });
+
+        // Data Repository: Interactive Core Service Portfolios
+        const operationalModes = {
+            market: {
+                pre: "Service Category // 01. Market Development & Access",
+                title: "Guiding sovereign entry setups and navigating localized corporate barriers.",
+                desc: "We actively help international businesses land in emerging economic corridors with optimized regulatory configurations, localized joint venture structures, and robust relationship management.",
+                bullets: [
+                    "Strategic government and agency relationship building",
+                    "Cross-border regulatory compliance checks and local setup permits",
+                    "Regional commercial feasibility and corridor landing assessments"
+                ],
+                tag: "DELIVERY SCOPE",
+                val: "ONGOING ENGAGEMENT",
+                subBlocks: [
+                    { t: "Local Agency Linkages", d: "Unlocking high-level access through established bilateral trade agencies." },
+                    { t: "Regulatory Cleared Paths", d: "Evaluating strict compliance checks under complex bilateral treaties." }
+                ]
+            },
+            identify: {
+                pre: "Service Category // 02. Identifying Investment Opportunities",
+                title: "Vetting high-yield real estate, agriculture, and infrastructure assets.",
+                desc: "We scan emerging corridors to pinpoint high-potential projects, ensuring they align with localized environmental guidelines, supply chain security, and sovereign expansion objectives.",
+                bullets: [
+                    "Localized asset screening and early stage viability metrics",
+                    "Bilateral joint venture opportunity catalog formulation",
+                    "Comprehensive risk profiling and sovereign asset protection advice"
+                ],
+                tag: "DISCOVERY WINDOW",
+                val: "2 TO 4 WEEKS PROJECT FOCUS",
+                subBlocks: [
+                    { t: "Sovereign Asset Matching", d: "Matching foreign investors with verified state-backed projects." },
+                    { t: "Viability Stress Tests", d: "Subjecting prospective projects to deep logistical audits." }
+                ]
+            },
+            finance: {
+                pre: "Service Category // 03. Sourcing Finance & Strategic Partners",
+                title: "Connecting ready plans with prominent international capitals.",
+                desc: "We manage relationships with private capital networks, developmental banks, and commercial investors to supply structured financial backing for emerging economic expansion projects.",
+                bullets: [
+                    "Private equity capital coordination and direct matchings",
+                    "Public-Private Concession capital packaging structures",
+                    "Bilateral development financing (DFI) path clearing"
+                ],
+                tag: "INVESTMENT MATRICES",
+                val: "STRUCTURED OUTCOMES",
+                subBlocks: [
+                    { t: "Global Capital Conduit", d: "Positioning strategic local opportunities within global capital networks." },
+                    { t: "Concession Frameworks", d: "Refining investment packages to maximize stakeholder interest." }
+                ]
+            }
+        };
+
+        function changeOperationalMode(mode) {
+            const tabs = {
+                market: document.getElementById('mode-tab-market'),
+                identify: document.getElementById('mode-tab-identify'),
+                finance: document.getElementById('mode-tab-finance')
+            };
+
+            // Re-style selection targets
+            Object.keys(tabs).forEach(k => {
+                tabs[k].className = "py-4 text-xs font-mono-tech font-semibold border-r border-ibm-border transition-all text-ibm-textSecondary hover:text-ibm-blue";
+            });
+
+            // Set active highlight state
+            if (mode === 'finance') {
+                tabs[mode].className = "py-4 text-xs font-mono-tech font-bold transition-all bg-ibm-light text-ibm-blue";
+            } else {
+                tabs[mode].className = "py-4 text-xs font-mono-tech font-bold border-r border-ibm-border transition-all bg-ibm-light text-ibm-blue";
+            }
+
+            const record = operationalModes[mode];
+            const contentCard = document.getElementById('mode-details-box');
+
+            let bulletsHTML = '';
+            record.bullets.forEach(b => {
+                bulletsHTML += `<li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-ibm-blue text-[9px]"></i> ${b}</li>`;
+            });
+
+            let subBlocksHTML = '';
+            record.subBlocks.forEach(sb => {
+                subBlocksHTML += `
+                    <div class="p-3 bg-white border-l-2 border-ibm-blue rounded-none shadow-sm">
+                        <h4 class="font-bold text-ibm-textPrimary text-[11px] mb-1">${sb.t}</h4>
+                        <p class="text-ibm-textSecondary text-[10px]">${sb.d}</p>
+                    </div>
+                `;
+            });
+
+            contentCard.innerHTML = `
+                <div class="md:col-span-7 space-y-4">
+                    <span class="text-[10px] font-mono-tech text-ibm-blue uppercase tracking-widest block font-bold">${record.pre}</span>
+                    <h3 class="text-xl sm:text-2xl font-light text-ibm-textPrimary">${record.title}</h3>
+                    <p class="text-xs text-ibm-textSecondary leading-relaxed">${record.desc}</p>
+                    <ul class="space-y-2 text-xs text-ibm-textSecondary font-mono-tech">
+                        ${bulletsHTML}
+                    </ul>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 p-6 border border-ibm-border rounded-none shadow-inner">
+                    <div class="flex justify-between items-center text-[9px] font-mono-tech text-ibm-textSecondary border-b border-ibm-border pb-3 mb-4 font-bold">
+                        <span>${record.tag}</span>
+                        <span>${record.val}</span>
+                    </div>
+                    <div class="space-y-4 font-mono-tech text-xs">
+                        ${subBlocksHTML}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Data Repository: Interactive Corridor Blueprint Results
+        const navigatorCorridors = {
+            africa: {
+                badge: "Africa Corridor Strategy",
+                steps: [
+                    { title: "Identify Agricultural & Infrastructure Assets", desc: "Pinpointing key local projects needing capital setup or market entry development in regional hubs." },
+                    { title: "Private Partner Matching", desc: "Connecting local enterprises with European capital providers and verified sovereign investors." },
+                    { title: "Sovereign Capacity Workshop", desc: "Optional delegate seminars on FDI concession strategies and global capital risk mitigation." }
+                ]
+            },
+            asia: {
+                badge: "Southeast Asia Development",
+                steps: [
+                    { title: "Bilateral Trade Compliance Realignment", desc: "Auditing compliance benchmarks against Western trade tariffs and maritime cargo standards." },
+                    { title: "Market Development Assessment", desc: "Mapping commercial distribution lanes and joint ventures for fast market access." },
+                    { title: "Executive Benchmarking Sessions", desc: "Arranging structured study tours of Western trade networks for delegates." }
+                ]
+            },
+            latam: {
+                badge: "South America Corridor",
+                steps: [
+                    { title: "PPP concession packaging structures", desc: "Preparing local infrastructure proposals for high-yield developmental financing (DFI)." },
+                    { title: "Regulatory landing permits", desc: "Coordinating legal access and permits across Mercosur-aligned pathways." },
+                    { title: "Resource Alignment Study Forums", desc: "Interactive briefing tracks on mineral security supply networks and energy finance." }
+                ]
+            },
+            europe: {
+                badge: "Eastern Europe Corridors",
+                steps: [
+                    { title: "Cross-Border Regulatory Audits", desc: "Reviewing legal standards under European framework agreements." },
+                    { title: "Development Partner Matching", desc: "Vetting reliable private stakeholders and logistics operators for strategic joint ventures." },
+                    { title: "Policy Stress-Test Sessions", desc: "Workshops covering currency stability controls and regional reserve asset isolation." }
+                ]
+            }
+        };
+
+        function updateNavDelegates(val) {
+            document.getElementById('nav-delegation-display').innerText = `${val} delegates`;
+            runNavigator();
+        }
+
+        function runNavigator() {
+            const region = document.getElementById('nav-region').value;
+            const objective = document.getElementById('nav-objective').value;
+            const delegates = document.getElementById('nav-delegation-slider').value;
+
+            const selectedPath = navigatorCorridors[region];
+            document.getElementById('nav-badge').innerText = selectedPath.badge;
+
+            // Simple map object representation to format objective terms nicely
+            const objTextMap = {
+                finance: "Capital Sourcing",
+                access: "Market Entry Development",
+                training: "FDI Delegate Training",
+                relationship: "Strategic Partnerships"
+            };
+            const activeObjectiveLabel = objTextMap[objective];
+            document.getElementById('nav-summary-label').innerText = `${selectedPath.badge} (${activeObjectiveLabel} Track for ${delegates} delegates)`;
+
+            const container = document.getElementById('nav-blueprint-container');
+            container.innerHTML = ''; // Clear prior nodes
+
+            selectedPath.steps.forEach((step, idx) => {
+                const blockHtml = `
+                    <div class="flex gap-4 items-start bg-white border border-ibm-border p-3.5 rounded-none shadow-sm">
+                        <span class="text-[9px] font-mono-tech font-bold text-ibm-blue bg-ibm-blue/5 border border-ibm-blue/20 px-2 py-0.5 shrink-0 rounded-none">STAGE 0${idx + 1}</span>
+                        <div>
+                            <p class="text-xs text-ibm-textPrimary font-semibold mb-1">${step.title}</p>
+                            <p class="text-[11px] text-ibm-textSecondary leading-relaxed">${step.desc}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += blockHtml;
+            });
+        }
+
+        // Transmit Navigator details into main strategic intake form
+        function syncNavigatorToForm() {
+            const metaSummary = document.getElementById('nav-summary-label').innerText;
+            const selectedRegion = document.getElementById('nav-region').value;
+
+            // Set appropriate drop track focus in form
+            if (selectedRegion === 'africa' || selectedRegion === 'latam') {
+                document.getElementById('form-track-select').value = "finance";
+            } else {
+                document.getElementById('form-track-select').value = "market";
+            }
+
+            document.getElementById('form-details-body').value = `Brief synced from Interactive Corridor Navigator: Proposed "${metaSummary}". Please coordinate with our office to schedule a preliminary review.`;
+
+            // Smooth scroll to intake form section
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact Intake Submission Simulation
+        function dispatchDiplomaticData(event) {
+            event.preventDefault();
+            document.getElementById('form-success-alert').classList.remove('hidden');
+        }
+
+        function resetDiplomaticForm() {
+            document.getElementById('diplomatic-form').reset();
+            document.getElementById('form-success-alert').classList.add('hidden');
+        }
+
+        // Initialize controllers on ready state
+        window.onload = function() {
+            runNavigator();
+        };
+    </script>
+</body>
+</html>
