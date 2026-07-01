@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilateral Executive Development Proposal | A-Plus Resources & GMCC</title>
+    
+    <!-- Tailwind CSS and Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nigeria: {
+                          50: '#f0fdf4',
+                          100: '#dcfce7',
+                          200: '#bbf7d0',
+                          600: '#166534', /* Refined Emerald Green */
+                          800: '#14532d',
+                          900: '#0f3e23',
+                          950: '#052e16',
+                        },
+                        gold: {
+                            100: '#fdf6e2',
+                            500: '#af8a44', /* Premium Metallic Gold */
+                            600: '#9b7633',
+                            700: '#7c5a21',
+                        },
+                        slate: {
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        
+        /* Simulated A4 Pages on screen */
+        .paper-page {
+            background-color: #ffffff !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Screen-only page break marker */
+        .page-divider {
+            position: relative;
+            margin: 3rem 0;
+            border-top: 2px dashed #cbd5e1;
+        }
+        .page-divider::after {
+            content: "Page Break";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #f1f5f9;
+            padding: 0 10px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        /* Perfect A4 Print Styling */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 11pt !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            }
+            .paper-page {
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 0 2cm 0 !important; /* Elegant bottom page spacing */
+                page-break-after: always !important;
+                height: auto !important;
+                min-height: auto !important;
+                border: none !important;
+            }
+            .page-divider {
+                display: none !important;
+            }
+            .print-border {
+                border: none !important;
+            }
+            /* Specific heading and text sizing for print */
+            h1 { font-size: 28pt !important; line-height: 1.2 !important; }
+            h2 { font-size: 20pt !important; }
+            h3 { font-size: 14pt !important; }
+            p, li, td { font-size: 10.5pt !important; line-height: 1.5 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
+
+    <aside class="w-full md:w-80 bg-white border-r border-slate-200 p-6 flex flex-col justify-between no-print sticky top-0 md:h-screen shrink-0 z-50">
+        <div class="space-y-6">
+            <!-- Header Logo -->
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-nigeria-600 to-nigeria-950 font-serif font-black text-white text-lg shadow-md">
+                    A+
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-slate-900 font-extrabold text-sm tracking-wide uppercase">A-Plus Resources</span>
+                    <span class="text-[9px] text-nigeria-600 tracking-widest uppercase font-semibold">Strategic Partners</span>
+                </div>
+            </div>
+
+            <!-- Workspace Action Controls -->
+            <div class="space-y-3">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Document Actions</span>
+                <button onclick="window.print()" class="w-full px-4 py-2.5 bg-nigeria-600 hover:bg-nigeria-800 text-white font-bold rounded-lg text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-file-pdf"></i> Export to PDF / Print
+                </button>
+                <button onclick="togglePreviewMode()" id="preview-toggle" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-eye text-nigeria-600"></i> <span id="preview-text">Toggle Print Layout</span>
+                </button>
+            </div>
+
+            <!-- Page Navigation Quick Links -->
+            <div class="space-y-3 pt-4 border-t border-slate-100">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Proposal Navigation</span>
+                <nav class="space-y-1">
+                    <a href="#page-1" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">1. Cover Page</a>
+                    <a href="#page-2" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">2. Letter of Invitation</a>
+                    <a href="#page-3" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">3. Core Philosophy</a>
+                    <a href="#page-4" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">4. Proposed Outline Template</a>
+                    <a href="#page-5" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">5. Visa & Support Letters</a>
+                    <a href="#page-6" class="block px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-50 hover:text-nigeria-600 rounded font-medium transition-colors">6. Important Timelines</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center space-y-1">
+            <p>A-Plus Resources Secretariat</p>
+            <p>Port Harcourt & St. Helens, UK</p>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto px-4 md:px-12 py-10 print-full-width">
+        <div id="document-preview-wrapper" class="max-w-[850px] mx-auto space-y-1">
+            
+            <!-- PAGE 1: COVER PAGE -->
+            <section id="page-1" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                
+                <!-- Page Top: Official Institutional Headers -->
+                <div class="flex justify-between items-start gap-4">
+                    <!-- Nigeria Coat of Arms & Flag Segment -->
+                    <div class="flex items-center gap-3">
+                        <img id="logo-ng-coat" class="h-16 w-auto object-contain" 
+                             src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg" 
+                             alt="Coat of arms of Nigeria"
+                             onerror="this.style.display='none'; document.getElementById('alt-ng-coat').classList.remove('hidden')">
+                        <div id="alt-ng-coat" class="hidden h-12 w-12 rounded bg-nigeria-600 flex items-center justify-center font-bold text-white text-[9px] text-center">
+                            NG COA
+                        </div>
+                        
+                        <img id="logo-ng-flag" class="h-8 w-auto border border-slate-200 object-contain" 
+                             src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg" 
+                             alt="Flag of Nigeria"
+                             onerror="this.style.display='none'; document.getElementById('alt-ng-flag').classList.remove('hidden')">
+                        <div id="alt-ng-flag" class="hidden px-2 py-1 rounded bg-nigeria-600 text-white font-bold text-[8px]">
+                            NG Flag
+                        </div>
+                    </div>
+
+                    <!-- GMCC & GMCA Logo Segment -->
+                    <div class="flex items-center gap-3">
+                        <img id="logo-gmcc" class="h-10 w-auto object-contain" 
+                             src="https://gmlpn.co.uk/wp-content/uploads/2018/11/GMCC-logo.png" 
+                             alt="GMCC Logo"
+                             onerror="this.style.display='none'; document.getElementById('alt-gmcc').classList.remove('hidden')">
+                        <div id="alt-gmcc" class="hidden px-2 py-1.5 rounded bg-slate-900 text-white font-bold text-[9px] tracking-wider">
+                            GMCC UK
+                        </div>
+
+                        <div class="h-8 w-[1px] bg-slate-200"></div>
+
+                        <img id="logo-gmca" class="h-10 w-auto object-contain" 
+                             src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Greater_Manchester_Combined_Authority.svg" 
+                             alt="GMCA Logo"
+                             onerror="this.style.display='none'; document.getElementById('alt-gmca').classList.remove('hidden')">
+                        <div id="alt-gmca" class="hidden px-2 py-1.5 rounded bg-slate-100 text-slate-800 border border-slate-200 font-bold text-[9px]">
+                            GMCA
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Cover Typography and Center Silhouette -->
+                <div class="my-auto space-y-8 relative">
+                    <!-- Faded Map of Nigeria overlaid behind text for premium look -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04] select-none z-0">
+                        <img id="bg-ng-map" class="max-h-[400px] w-auto object-contain" 
+                             src="https://upload.wikimedia.org/wikipedia/commons/7/73/Nigeria_blank_map.svg" 
+                             alt="Nigeria outline map"
+                             onerror="this.style.display='none'">
+                    </div>
+
+                    <div class="space-y-4 relative z-10">
+                        <span class="text-nigeria-600 font-extrabold uppercase text-xs tracking-widest block">Bilateral Development & Governance Framework</span>
+                        <h1 class="text-4xl md:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Bilateral Executive <br>Development & Local <br>
+                            <span class="text-nigeria-600 font-serif italic font-semibold border-b-4 border-gold-500 pb-1">
+                                Governance Efficiency
+                            </span>
+                        </h1>
+                    </div>
+                    
+                    <div class="h-[3px] w-24 bg-gradient-to-r from-nigeria-600 to-gold-500 relative z-10"></div>
+
+                    <p class="text-sm md:text-base text-slate-600 max-w-xl font-light leading-relaxed relative z-10">
+                        A practical, non-abstract study programme engineered specifically for Nigerian Local Government Chairmen, Vice Chairmen, and Public Sector Administrators. Designed in coordination with the Greater Manchester Chamber of Commerce (GMCC) to deliver functional municipal management templates and direct UK partner networks.
+                    </p>
+                </div>
+
+                <!-- Cover Metadata Block -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left border-t border-slate-100 pt-10">
+                    <div>
+                        <p class="font-bold text-nigeria-600 uppercase tracking-widest text-[9px] mb-1">Host Location</p>
+                        <p class="text-slate-900 font-semibold text-xs">Manchester City, UK</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-nigeria-600 uppercase tracking-widest text-[9px] mb-1">Cohort Timeline</p>
+                        <p class="text-slate-900 font-semibold text-xs">September 7 – 9, 2026</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-nigeria-600 uppercase tracking-widest text-[9px] mb-1">Target Audience</p>
+                        <p class="text-slate-900 font-semibold text-xs">LGAs & LCDAs (Nigeria)</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-nigeria-600 uppercase tracking-widest text-[9px] mb-1">Programme Lead</p>
+                        <p class="text-slate-900 font-semibold text-xs">A-Plus Resources Ltd</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="page-divider"></div>
+
+            <!-- PAGE 2: OFFICIAL INVITATION LETTER -->
+            <section id="page-2" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                <div class="space-y-6">
+                    <!-- Letterhead Crest -->
+                    <div class="flex flex-col items-center text-center space-y-2 border-b border-slate-100 pb-6">
+                        <img class="h-20 w-auto object-contain" 
+                             src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg" 
+                             alt="Nigeria Coat of Arms Letterhead"
+                             onerror="this.style.display='none'">
+                        <div class="text-center">
+                            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900">A-Plus Resources Limited</h2>
+                            <p class="text-[9px] text-nigeria-600 uppercase tracking-wider font-semibold">Bilateral Trade, Investment & Municipal Advisory Services</p>
+                            <p class="text-[8px] text-slate-400">UK Registered Office: Merseyside WA9 3XU | Nigeria Secretariat: Port Harcourt, Rivers State</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <div class="flex justify-between items-center text-[10px] text-slate-500 uppercase tracking-wider font-semibold">
+                            <span>Official Invitation</span>
+                            <span>Date: July 2026</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-slate-900">Official Programme Invitation</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wider">
+                            To: The Executive Chairmen of Local Government Areas (LGAs) & LCDAs, Nigeria <br>
+                            Through: The Association of Local Governments of Nigeria (ALGON)
+                        </p>
+                    </div>
+
+                    <!-- Letter Body -->
+                    <div class="space-y-4 text-slate-700 text-xs md:text-sm leading-relaxed text-justify">
+                        <p>Dear Honorable Chairmen,</p>
+                        
+                        <p>
+                            On behalf of **A-Plus Resources Ltd**, in strategic partnership with the **Greater Manchester Chamber of Commerce (GMCC)**—the largest accredited Chamber of Commerce in the United Kingdom—we have the privilege of inviting you to participate in this exclusive, high-impact bilateral executive development study programme.
+                        </p>
+                        
+                        <p>
+                            This programme is specifically structured to address the core challenges faced by municipal administrators in Nigeria today. This programme focuses on **pragmatic, low-tech, and high-impact solutions** that can be directly implemented at the local government level to drive tangible development.
+                        </p>
+                        
+                        <p>
+                            Greater Manchester provides the world's premier model for localized development. Over the last three decades, this industrial region devolved power to its ten local authority municipal councils, allowing them to coordinate infrastructure, manage waste-to-value streams, and build dynamic, self-sufficient local economies. This programme is designed to bypass abstract academic theories and deliver immediate, functional value. By participating, you will be equipped with the precise **knowledge, practical management tools, and direct access to UK-based investor and development networks** required to:
+                        </p>
+
+                        <!-- Key Pillar Blocks -->
+                        <div class="grid sm:grid-cols-2 gap-4 my-6">
+                            <div class="p-4 rounded-lg border border-slate-100 bg-slate-50">
+                                <h4 class="font-bold text-xs text-slate-950 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-calculator text-nigeria-600"></i> 1. Deploy Leak-Proof IGR Models
+                                </h4>
+                                <p class="text-[11px] text-slate-500">Implement structured, step-by-step revenue collection models and manual-to-digital audit frameworks to capture informal sector levies cleanly and eliminate leakage at the source (avoiding GIGO failures).</p>
+                            </div>
+                            <div class="p-4 rounded-lg border border-slate-100 bg-slate-50">
+                                <h4 class="font-bold text-xs text-slate-950 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-recycle text-nigeria-600"></i> 2. Establish Waste-to-Value Models
+                                </h4>
+                                <p class="text-[11px] text-slate-500">Acquire off-the-shelf operational blueprints and sanitation models that transform organic market waste into commercial agricultural compost, creating local jobs.</p>
+                            </div>
+                            <div class="p-4 rounded-lg border border-slate-100 bg-slate-50">
+                                <h4 class="font-bold text-xs text-slate-950 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-nodes text-nigeria-600"></i> 3. Secure Alternative Capital Channels
+                                </h4>
+                                <p class="text-[11px] text-slate-500">Connect directly with UK-based municipal developers, public-private partnership (PPP) experts, and development finance networks to co-fund markets and motor parks.</p>
+                            </div>
+                            <div class="p-4 rounded-lg border border-slate-100 bg-slate-50">
+                                <h4 class="font-bold text-xs text-slate-950 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-wrench text-nigeria-600"></i> 4. Implement Asset Longevity Models
+                                </h4>
+                                <p class="text-[11px] text-slate-500">Equip engineering teams with simple, manual preventative maintenance schedules to triple the lifespan of community links and health clinics.</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            We look forward to partnering with your council as we build sustainable grassroots administrations across Nigeria.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Letter Sign-off Block -->
+                <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <p class="font-bold text-slate-900 text-xs">Sanya Oluwagbeyi</p>
+                        <p class="text-slate-400 text-[9px] uppercase tracking-widest font-semibold">Program Director, A-Plus Resources Ltd</p>
+                    </div>
+                    <div class="text-left sm:text-right text-[10px] text-slate-400">
+                        <p>Secretariat Office: Suite 16, 67 Emekuku Street</p>
+                        <p>D/Line, Port Harcourt, Rivers State, Nigeria</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="page-divider"></div>
+
+            <!-- PAGE 3: CORE PHILOSOPHY & OBJECTIVES -->
+            <section id="page-3" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-2 text-nigeria-600 font-bold uppercase text-[9px] tracking-widest">
+                        <span class="w-6 h-[1px] bg-nigeria-600"></span> Section 01: Strategic Intent
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900">Bilateral Exchange & Practical Adaptation</h2>
+                        <p class="text-xs text-slate-500 max-w-2xl leading-relaxed text-justify">
+                            The core philosophy of this programme is **bilateral exchange and practical adaptation**. Rather than presenting abstract theoretical concepts, this study tour focusing on **"Local Governance Efficiency"** will expose delegates to functioning modern municipal models with direct insights on how to adapt these models to the Nigerian context.
+                        </p>
+                    </div>
+
+                    <!-- Objectives List -->
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-nigeria-100 text-nigeria-600 flex items-center justify-center font-bold text-xs">01</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Devolved Governance Models</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                                    Understand how 10 independent local councils coordinate under a single unified authority (**Greater Manchester Combined Authority - GMCA**) to pool resources for joint developmental projects while completely retaining unique local council autonomy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-nigeria-100 text-nigeria-600 flex items-center justify-center font-bold text-xs">02</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Alternative Infrastructure Financing</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                                    Learn how to attract and manage Public-Private Partnerships (PPPs) and generate robust Internally Generated Revenue (IGR) at the grassroots level using reliable collection models without over-relying on federal monthly allocations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-nigeria-100 text-nigeria-600 flex items-center justify-center font-bold text-xs">03</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Practical Sanitation & Waste-to-Value Models</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                                    Explore the deployment of cost-effective, low-tech waste management programs, localized organic recycling, and market sanitation models that promote clean public areas and generate local jobs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-nigeria-100 text-nigeria-600 flex items-center justify-center font-bold text-xs">04</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Strategic Public Leadership</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                                    Gain actionable frameworks for high-impact decision-making, transparent financial management, municipal project delivery, and community policy sustainability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clean Table Layout replacing original style box -->
+                    <div class="space-y-3 pt-4">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Core Program Focus Areas</span>
+                        <div class="border border-slate-200 rounded-lg overflow-hidden">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-50 border-b border-slate-200">
+                                        <th class="p-3 font-bold text-slate-900 w-1/4">Core Focus Area</th>
+                                        <th class="p-3 font-bold text-slate-900">Practical Scope & Implementation</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-950">1. Fiscal Autonomy</td>
+                                        <td class="p-3 text-slate-600">Expanding local tax bases, registering informal businesses, and digitalizing IGR.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-950">2. Municipal Sanitation</td>
+                                        <td class="p-3 text-slate-600">Low-tech waste-to-value, organized local dumpsites, and community cleaning jobs.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-950">3. Community Infrastructure</td>
+                                        <td class="p-3 text-slate-600">Cost-effective road maintenance, drainage management, and market facility upgrades.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footnotes page pagination -->
+                <div class="pt-6 border-t border-slate-100 flex justify-between text-[10px] text-slate-400">
+                    <span>Executive Proposal &bull; A-Plus Resources</span>
+                    <span>Page 3 of 6</span>
+                </div>
+            </section>
+
+            <div class="page-divider"></div>
+
+            <!-- PAGE 4: PROPOSED OUTLINE TEMPLATE -->
+            <section id="page-4" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-2 text-nigeria-600 font-bold uppercase text-[9px] tracking-widest">
+                        <span class="w-6 h-[1px] bg-nigeria-600"></span> Section 02: Outline Template
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900">Proposed 3-Day Framework Template</h2>
+                        <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                            *Note: The specific sessions, training modules, guest speakers, and facilitators below will be fully customized and locked in during the upcoming alignment meeting with GMCC, local authorities, and training providers.*
+                        </p>
+                    </div>
+
+                    <!-- Daily Template Outlines -->
+                    <div class="space-y-6">
+                        <!-- Day 1 Block -->
+                        <div class="border border-slate-200 rounded-lg p-5">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-2 mb-3">
+                                <h3 class="text-sm font-bold text-slate-950">DAY ONE: Local Devolution & Ecosystem Integration</h3>
+                                <span class="px-2 py-0.5 rounded bg-nigeria-100 text-nigeria-900 text-[9px] font-semibold tracking-wider uppercase">Block Alpha</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                Focus Theme: Understanding regional administrative coordination, service delivery frameworks, and building local stakeholder networks.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4 text-[11px] text-slate-500">
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Early Afternoon</strong>
+                                    <span>Delegate Arrival & Official Registration. Welcome refreshments and brief program orientation.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Afternoon Session</strong>
+                                    <span>Host Institutional Welcome. Introductions from GMCC and overview of Chamber activities.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Late Afternoon</strong>
+                                    <span>High-Level Networking Reception. Structured meet-and-greet with Manchester's business and local authority ecosystem.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 Block -->
+                        <div class="border border-slate-200 rounded-lg p-5">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-2 mb-3">
+                                <h3 class="text-sm font-bold text-slate-950">DAY TWO: Governance, Fiscal Autonomy & Revenue Models</h3>
+                                <span class="px-2 py-0.5 rounded bg-nigeria-100 text-nigeria-900 text-[9px] font-semibold tracking-wider uppercase">Block Beta</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                Focus Theme: Maximizing Internally Generated Revenue (IGR), managing grassroots marketplace assets, and building sustainable public-private partnerships.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4 text-[11px] text-slate-500">
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Morning Masterclass</strong>
+                                    <span>Local Revenue & Financial Autonomy. Practical models for informal tax base registration and leak-proof collection.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Afternoon Masterclass</strong>
+                                    <span>Infrastructure Financing & Local Asset Governance. Best practices for funding and maintaining public markets and transit parks.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Practical Workspace</strong>
+                                    <span>Co-creation drafting workspace for localized municipal revenue turnaround strategies.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 3 Block -->
+                        <div class="border border-slate-200 rounded-lg p-5">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-2 mb-3">
+                                <h3 class="text-sm font-bold text-slate-950">DAY THREE: Basic Infrastructure, Waste-to-Value & Action Plans</h3>
+                                <span class="px-2 py-0.5 rounded bg-nigeria-100 text-nigeria-900 text-[9px] font-semibold tracking-wider uppercase">Block Gamma</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                Focus Theme: Implementing cost-effective community sanitation models, basic asset preservation, and final regional action planning.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4 text-[11px] text-slate-500">
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Morning Masterclass</strong>
+                                    <span>Pragmatic Waste-to-Value & Sanitation. Low-tech, community-based waste composting models that generate employment.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Afternoon Masterclass</strong>
+                                    <span>Infrastructure Upkeep & Public Asset Longevity. Simplified road maintenance models and clinic upkeep routines.</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700 block mb-1">Valedictory Session</strong>
+                                    <span>Drafting individual Local Council Action Plans and formal certificate presentation certified by the GMCC.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page pagination -->
+                <div class="pt-6 border-t border-slate-100 flex justify-between text-[10px] text-slate-400">
+                    <span>Executive Proposal &bull; A-Plus Resources</span>
+                    <span>Page 4 of 6</span>
+                </div>
+            </section>
+
+            <div class="page-divider"></div>
+
+            <!-- PAGE 5: STRATEGIC MEETING ALIGNMENT TRACKS -->
+            <section id="page-5" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-2 text-nigeria-600 font-bold uppercase text-[9px] tracking-widest">
+                        <span class="w-6 h-[1px] bg-nigeria-600"></span> Section 03: Alignment Blueprint
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900">Strategic Collaboration & Development Framework</h2>
+                        <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                            The delegation is built around permanent, ongoing development. In close cooperation with the GMCC, we have outlined **seven key strategic alignment tracks** designed to move participants from basic theory to long-term funding execution. This bilateral capacity development initiative builds upon and expands the structural frameworks proposed in the document **UK Event .pdf**, tailoring them directly to the needs of the Association of Local Governments of Nigeria (ALGON).
+                        </p>
+                    </div>
+
+                    <!-- Seven Alignment tracks -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-circle-nodes text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">1. Direct Municipal Development Finance & Grants</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Connecting local councils with UK international development funds (such as the Foreign, Commonwealth & Development Office - FCDO, and British International Investment - BII) to support sub-national basic infrastructural services without central reliance.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-shield-halved text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">2. Grant Attraction & Capacity Building</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Satisfying strict institutional donor requirements for accountability. Setting up robust anti-GIGO tracking models, audit trails, and financial tracking structures directly within your councils.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-file-signature text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">3. Live Proposal & Bid-Drafting Workshop</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">A non-theoretical workspace during Day 2 and Day 3 where delegates draft actual project outlines and logical framework concept notes under GMCC expert supervision.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-headset text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">4. A-Plus Post-Training Implementation Desk</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Post-training implementation support in Nigeria. Our expert advisory team actively collaborates with returned councils to refine, formalize, and submit their proposal notes.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-seedling text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">5. Simple Green Bond Models</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Demystifying eco-financing. Training local authorities on how to pool environmental sanitation and waste-to-value programs to issue structured sub-national green notes.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-link text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">6. Ongoing Chamber Affiliation & Sister-Council Twinning</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Providing continuing value via special Associate Memberships with GMCC. We will explore pilot twinning linkages between selected Nigerian councils and Manchester boroughs.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-nigeria-600 mt-1"><i class="fa-solid fa-award text-xs"></i></span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">7. Bilateral Protocol, Plaque Exchange & Souvenirs</h4>
+                                <p class="text-[11px] text-slate-500 text-justify">Acknowledging traditional governance protocols. The program includes structured award ceremonies, bilateral plaque exchange, and hand-delivered symbolic host country souvenirs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page pagination -->
+                <div class="pt-6 border-t border-slate-100 flex justify-between text-[10px] text-slate-400">
+                    <span>Executive Proposal &bull; A-Plus Resources</span>
+                    <span>Page 5 of 6</span>
+                </div>
+            </section>
+
+            <div class="page-divider"></div>
+
+            <!-- PAGE 6: VISAL LOGISTICS & COHORT STEPS -->
+            <section id="page-6" class="paper-page bg-white p-8 md:p-16 min-h-[1100px] flex flex-col justify-between border border-slate-200 print-border">
+                <div class="space-y-8">
+                    <!-- Section Header -->
+                    <div class="flex items-center gap-2 text-nigeria-600 font-bold uppercase text-[9px] tracking-widest">
+                        <span class="w-6 h-[1px] bg-nigeria-600"></span> Section 04: Administrative Support
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900">Visa Facilitation & Administrative Protocols</h2>
+                        <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                            Securing professional clearance and timely entry support remains our absolute logistic priority for the incoming delegation of Local Government Chairmen.
+                        </p>
+                    </div>
+
+                    <!-- Two-column Logistic Info -->
+                    <div class="grid md:grid-cols-2 gap-8 text-xs text-slate-600 leading-relaxed">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 flex items-center gap-1.5 border-b border-slate-100 pb-1">
+                                <i class="fa-solid fa-passport text-nigeria-600"></i> UK Visa Facilitation Process
+                            </h4>
+                            <p class="text-justify">
+                                Establishing clear corporate intent is paramount. To ensure a fast and transparent application cycle, A-Plus Resources and GMCC have structured direct channels:
+                            </p>
+                            <ul class="space-y-2 list-disc list-inside text-slate-500 pl-1 text-justify">
+                                <li><strong>Supporting Onboarding Letters:</strong> Hand-signed personalized invitations are sent directly to confirmed executive delegates.</li>
+                                <li><strong>Diplomatic Registry Coordination:</strong> Regional host registries will notify relevant administrative sectors regarding this high-profile bilateral municipal delegation.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 flex items-center gap-1.5 border-b border-slate-100 pb-1">
+                                <i class="fa-solid fa-hotel text-nigeria-600"></i> Local Lodging & Transport Guidelines
+                            </h4>
+                            <p class="text-justify">
+                                Delegates manage individual flight bookings and direct accommodation fees. However, A-Plus delegates receive complete logistical advisory lists:
+                            </p>
+                            <ul class="space-y-2 list-disc list-inside text-slate-500 pl-1 text-justify">
+                                <li><strong>Pre-Screened Partner Hotels:</strong> Exclusive member-discounted bookings ranging between central Manchester boroughs.</li>
+                                <li><strong>Flight Coordination Pack:</strong> Pre-departure travel files containing travel guidelines, arrival timings, and transport suggestions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Next steps timeline -->
+                    <div class="pt-6 border-t border-slate-100 space-y-4">
+                        <h3 class="text-sm font-bold text-slate-950">Immediate Action Steps & Program Timelines</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-[11px] text-slate-500">
+                            <div>
+                                <span class="font-bold text-slate-900 block">July 15, 2026</span>
+                                <span>Expression of Interest Deadline</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-slate-900 block">July 31, 2026</span>
+                                <span>Confirmation of Registration</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-slate-900 block">Aug 1 - 28, 2026</span>
+                                <span>Biometrics & Visa Processing</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-slate-900 block">Sept 7 - 9, 2026</span>
+                                <span>Bilateral Programme Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Footer & Financial Note -->
+                <div class="space-y-4">
+                    <p class="text-[10px] text-slate-400 italic leading-normal border-l-2 border-nigeria-600 pl-3">
+                        *Note: Program tuition, course materials, administrative documentation, daily executive catering, and conference venue hosting values are managed under a separate financial schedule. Please consult the **Executive Investment Addendum (A-Plus/GMCC-F1)** issued to your council secretariat.
+                    </p>
+                    
+                    <div class="pt-4 border-t border-slate-100 flex justify-between text-[9px] text-slate-400">
+                        <span>A-Plus Resources Ltd (St. Helens, Merseyside WA9 3XU, UK)</span>
+                        <span>Page 6 of 6</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        let isSimulatedPreview = false;
+
+        // Toggles the screen visual mode between typical web layout and print representation
+        function togglePreviewMode() {
+            const previewToggle = document.getElementById('preview-toggle');
+            const previewText = document.getElementById('preview-text');
+            const wrapper = document.getElementById('document-preview-wrapper');
+            const pages = document.querySelectorAll('.paper-page');
+
+            isSimulatedPreview = !isSimulatedPreview;
+
+            if (isSimulatedPreview) {
+                // Apply strict clean A4 print simulation layouts
+                wrapper.style.maxWidth = "800px";
+                pages.forEach(page => {
+                    page.style.borderRadius = "0px";
+                    page.style.border = "1px solid #cbd5e1";
+                    page.style.padding = "12% 10%"; // Standard letter padding
+                });
+                previewText.innerText = "Back to Workspace View";
+                previewToggle.classList.add('bg-nigeria-100', 'border-nigeria-600', 'text-nigeria-800');
+            } else {
+                // Return to typical rich desktop workspace layouts
+                wrapper.style.maxWidth = "850px";
+                pages.forEach(page => {
+                    page.style.borderRadius = "8px";
+                    page.style.border = "1px solid #f1f5f9";
+                    page.style.padding = ""; // Reset inline style
+                });
+                previewText.innerText = "Toggle Print Layout";
+                previewToggle.classList.remove('bg-nigeria-100', 'border-nigeria-600', 'text-nigeria-800');
+            }
+        }
+    </script>
+</body>
+</html>
